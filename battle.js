@@ -37,7 +37,7 @@ function selectShip(event){
     ship.id = shipData[1];
 }
 //Creación de tablero jugador
-createMatrix(board, matrix, selectPosition, "player");
+crearMatrix(board, matrix, selectPosition, "player");
 //Creación de barcos
 for(let i=0; i<position.length; i++){
     let horizontal = document.createElement("div");
@@ -50,7 +50,7 @@ for(let i=0; i<position.length; i++){
     vertical.addEventListener("click", selectShip)
 }
 //Función para seleccionar posición de los barcos
-function selectPosition(event){
+function seleccionarPosicion(event){
     if(ship.quantity > 0){
         let grid = event.target
         let gridID = grid.id.split(",");
