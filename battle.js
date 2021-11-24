@@ -37,7 +37,7 @@ function selectShip(event){
     ship.id = shipData[1];
 }
 //Creación de tablero jugador
-crearMatrix(board, matrix, selectPosition, "player");
+crearMatrix(board, matrix, seleccionarPosicion, "player");
 //Creación de barcos
 for(let i=0; i<position.length; i++){
     let horizontal = document.createElement("div");
