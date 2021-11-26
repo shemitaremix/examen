@@ -11,7 +11,7 @@ let ship = {};
 let shipRandom = {};
 
 //Función para creación de tableros
-function crearMatrix(boardType, matrixType, func, type){
+function createMatrix(boardType, matrixType, func, type){
     for(let i=0; i<10; i++){
         let list = []
         let row = document.createElement("div");
@@ -37,7 +37,7 @@ function selectShip(event){
     ship.id = shipData[1];
 }
 //Creación de tablero jugador
-crearMatrix(board, matrix, seleccionarPosicion, "player");
+createMatrix(board, matrix, selectPosition, "player");
 //Creación de barcos
 for(let i=0; i<position.length; i++){
     let horizontal = document.createElement("div");
@@ -50,7 +50,7 @@ for(let i=0; i<position.length; i++){
     vertical.addEventListener("click", selectShip)
 }
 //Función para seleccionar posición de los barcos
-function seleccionarPosicion(event){
+function selectPosition(event){
     if(ship.quantity > 0){
         let grid = event.target
         let gridID = grid.id.split(",");
@@ -88,13 +88,13 @@ function seleccionarPosicion(event){
     }
 }
 //Función de botón iniciar juego
-function IniciarJuego(){
-    crearMatrix(boardAttack, matrixAttack, checkShot, "pc");
-    SeleccionarPocision()
+function startGame(){
+    createMatrix(boardAttack, matrixAttack, checkShot, "pc");
+    selectPositionRandom()
     document.querySelector("#button").disabled = true;
 }
 //Generar posición random de barcos
-function SeleccionarPocision(){
+function selectPositionRandom(){
     for(let i=0; i<quantityShipPC.length; i++){
         while(quantityShipPC[i] > 0){
             random(i);
