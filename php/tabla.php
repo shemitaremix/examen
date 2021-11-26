@@ -32,10 +32,10 @@ if(isset($_POST["posicionbarco4"])){
 }
 
 
-$sql = "INSERT INTO weyes (id,nombre,apellidos,posicionbarco1,posicionbarco2,posicionbarco3,posicionbarco4) VALUES (' ','$nombre','$apellidos','$posicionbarco1','$posicionbarco2',$posicionbarco3','$posicionbarco4')";
+$sql = "INSERT INTO partida (id,nombre,apellidos,posicionbarco1,posicionbarco2,posicionbarco3,posicionbarco4) VALUES (' ','$nombre','$apellidos','$posicionbarco1','$posicionbarco2',$posicionbarco3','$posicionbarco4')";
 
 if(mysqli_query($conn,$sql)){
-    echo "new recod created succefuly";
+    return 1;
 } else {
     echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 }

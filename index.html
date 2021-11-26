@@ -96,17 +96,20 @@
 <script type="text/javascript">
 	$(document).ready(function(){
 		$('#botonguardar').click(function(){
-			var datos= $('#ajax').serialize();
-			alert(datos);
-			return false;
+			var datos=$('#ajax').serialize();
 			$.ajax({
 				type:"post",
 				url:"./php/tabla.php",
 				data:datos,
-				success:function(){
-
+				success:function(r){
+					if(r==1){
+						alert("agregado con exito");
+					}else{
+						alert("israel la rego con el servidor");
+					}
 				}
 			});
+			return false;
 		});
 	});
 </script>

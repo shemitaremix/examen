@@ -1,7 +1,7 @@
 <?php
 
 $servername = "localhost";
-$database = "partida";
+$database = "batleship";
 $username = "root";
 $password = "";
 
