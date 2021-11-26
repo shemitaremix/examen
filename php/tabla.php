@@ -37,7 +37,7 @@ $sql = "INSERT INTO partida (id,nombre,apellidos,posicionbarco1,posicionbarco2,p
 if(mysqli_query($conn,$sql)){
     return 1;
 } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+    echo "Error: " . $sql . "<br>" . mysqli_error($conn);   
 }
 
 
