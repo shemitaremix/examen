@@ -32,7 +32,7 @@ if(isset($_POST["posicionbarco4"])){
 }
 
 
-$sql = "INSERT INTO partida (id,nombre,apellidos,posicionbarco1,posicionbarco2,posicionbarco3,posicionbarco4) VALUES (' ','$nombre','$apellidos','$posicionbarco1','$posicionbarco2',$posicionbarco3','$posicionbarco4')";
+$sql = "INSERT INTO partida (id,nombre,apellidos) VALUES (' ','$nombre','$apellidos')";
 
 if(mysqli_query($conn,$sql)){
     return 1;

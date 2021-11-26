@@ -47,7 +47,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter Apellido">
-						<input class="input100" type="text" name="apellido" placeholder="Apellido.">
+						<input class="input100" type="text" name="apellidos" placeholder="Apellido.">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
@@ -103,11 +103,12 @@
 				data:datos,
 				success:function(r){
 					if(r==1){
-						alert("agregado con exito");
-					}else{
 						alert("israel la rego con el servidor");
+						
+					}else{
+						alert("agregado con exito");
 					}
-					
+
 				}
 			});
 			return false;
