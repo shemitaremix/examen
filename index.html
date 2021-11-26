@@ -32,7 +32,7 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/barquito.png');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" id="ajax" method="post">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
 					</span>
@@ -59,7 +59,7 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="login100-form-btn">
+						<button class="login100-form-btn" id="botonguardar">
 							Entrar
 						</button>
 					</div>
@@ -89,6 +89,24 @@
 	<script src="vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
 	<script src="js/main.js"></script>
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
 </body>
 </html>
+<script type="text/javascript">
+	$(document).ready(function(){
+		$('#botonguardar').click(function(){
+			var datos= $('#ajax').serialize();
+			alert(datos);
+			return false;
+			$.ajax({
+				type:"post",
+				url:"./php/tabla.php",
+				data:datos,
+				success:function(){
+
+				}
+			});
+		});
+	});
+</script>
