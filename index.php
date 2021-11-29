@@ -109,8 +109,12 @@
 						alert("israel la rego con el servidor");
 						
 					}else{
-						alert("agregado con exito");
-						window.location.href = sitepath + "juego.html";
+						Swal.fire(
+							'Good job!',
+							'Iniciemos con el juego!',
+							'success'
+						)	
+						window.location.href = sitepath + "juego.php";
 					}
 
 				}
