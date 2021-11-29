@@ -64,6 +64,7 @@ function selectPosition(event){
                 }
                 quantityShip[ship.id] -= 1;
                 ship = {}
+                //GuardaMov();
             }
             else{
                 alert("Selecciona una posición válida");
