@@ -114,7 +114,7 @@
 							'Iniciemos con el juego!',
 							'success'
 						)	
-						window.location.href = sitepath + "juego.php";
+						window.location.href = "juego.php";
 					}
 
 				}
