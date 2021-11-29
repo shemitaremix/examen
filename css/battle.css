@@ -1,10 +1,10 @@
 body{
-    background-color: #CEDEEA;
+    background-color: #1285e9;
     text-align: center;
 }
 #board{
-    width: 300px;
-    height: 300px;
+    width: 700px;
+    height: 400px;
 }
 .myRow{
     width: 300px;
@@ -31,11 +31,11 @@ body{
     margin-top: 5px;
 }
 .selected{
-    background-color: blue;
+    background-color: rgb(65, 3, 94);
 }
 .hit{
-    background-color: red;
+    background-color: rgb(247, 243, 8);
 }
 .miss{
-    background-color: gray;
+    background-color: rgb(85, 76, 76);
 }
