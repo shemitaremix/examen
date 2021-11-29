@@ -67,7 +67,12 @@ function selectPosition(event){
                 //GuardaMov();
             }
             else{
-                alert("Selecciona una posición válida");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Seleccione una posicion adecuada!',
+                    footer: '<a href="">Why do I have this issue?</a>'
+                  });
             }
         }
         else if(ship.position === "vertical"){
@@ -80,12 +85,22 @@ function selectPosition(event){
                 ship = {}
             }
             else{
-                alert("Selecciona una posición válida");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops...',
+                    text: 'Seleccione una posicion adecuada!',
+                    footer: '<a href="">Why do I have this issue?</a>'
+                  });
             }
         }
     }
     else{
-        alert("Debes seleccionar un barco disponible");
+       Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Seleccione un barco disponible!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          });
     }
 }
 //Función de botón iniciar juego
@@ -150,13 +165,22 @@ function checkShot(event){
     let x = parseInt(gridID[0]);
     let y = parseInt(gridID[1]);
     if(matrixAttack[x][y] === "ship"){
-        alert("Muy bien, acertaste. Vuelve a jugar");
+        Swal.fire(
+            'Good job!',
+            'Muy bien le diste, hay que intentarlo de nuevo!',
+            'success'
+          )
         matrixAttack[x][y] = "hit";
         document.getElementById(x + "," + y + "," + "pc").className += " hit";
-        checkWinner(matrixAttack, "player")
+        checkWinner(matrixAttack, "player");
     }
     else{
-        alert("Mal! tu disparo cayó al agua");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'Diablos no le diste!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          });
         matrixAttack[x][y] = "miss";
         document.getElementById(x + "," + y + "," + "pc").className += " miss";
         shotPc()
@@ -167,7 +191,12 @@ function shotPc(){
     let x = Math.floor(Math.random() * Math.floor(10));
     let y = Math.floor(Math.random() * Math.floor(10));
     if(matrix[x][y] === "ship"){
-        alert("Ops! te han disparado");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'te han disparado!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          });
         matrix[x][y] = "hit";
         document.getElementById(x + "," + y + "," + "player").className += " hit";
         checkWinner(matrix, "pc");
@@ -177,7 +206,12 @@ function shotPc(){
         return shotPc();
     }
     else{
-        alert("El disparo del pc cayó al agua");
+        Swal.fire({
+            icon: 'error',
+            title: 'Oops...',
+            text: 'El disparo del jugador cayo al agua!',
+            footer: '<a href="">Why do I have this issue?</a>'
+          });
         matrix[x][y] = "miss";
         document.getElementById(x + "," + y + "," + "player").className += " miss";
     }
@@ -191,9 +225,17 @@ function checkWinner(matrix, player){
         }
     }
     if(player === "pc"){
-        alert("Ha ganado el PC")
+        Swal.fire(
+            'Good job!',
+            'A ganado el otro jugador!',
+            'success'
+          );
     }
     else{
-        alert("GANASTE!!!")
+        Swal.fire(
+            'Good job!',
+            'Has ganado!',
+            'success'
+          );
     }
 }
